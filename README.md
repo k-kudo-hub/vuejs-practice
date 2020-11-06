@@ -1,4 +1,4 @@
-# udemy-vuejs
+# vuejs-practice
 
 ## Project setup
 ```
