@@ -6,7 +6,9 @@
     <LikeNumber :total-number="number" @my-click="incrementNumber"></LikeNumber>
     <button @click="currentCompornent = 'Home'">Home</button>
     <button @click="currentCompornent = 'About'">About</button>
-    <component :is="currentCompornent"></component>
+    <keep-alive>
+      <component :is="currentCompornent"></component>
+    </keep-alive>
   </div>
 </template>
 
