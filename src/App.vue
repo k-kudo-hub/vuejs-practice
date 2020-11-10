@@ -9,6 +9,12 @@
     <keep-alive>
       <component :is="currentCompornent"></component>
     </keep-alive>
+    <div>
+      <h2>イベントのフォーム</h2>
+      <label for="title">タイトル</label>
+      <input id="title" type="text" v-model.lazy="eventData.title">
+      <p>{{eventData.title}}</p>
+    </div>
   </div>
 </template>
 
@@ -22,6 +28,9 @@ export default {
     return {
       number: 14,
       currentCompornent: "Home",
+      eventData: {
+        title: "タイトル",
+      }
     };
   },
   components: {
@@ -38,8 +47,5 @@ export default {
 </script>
 
 <style scoped>
-div {
-  border: 1px solid blue;
-}
 
 </style>
