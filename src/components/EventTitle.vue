@@ -5,9 +5,9 @@
       id="title"
       type="text" 
       :value="value"
-      @input="$emit('input')"
+      @input="$emit('input', $event.target.value)"
     >
-    <p>{{ eventData.title }}</p>
+    <p>{{ value }}</p>
   </div>
 </template>
 
