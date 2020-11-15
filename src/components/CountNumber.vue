@@ -11,8 +11,11 @@
 
 <script>
 import { tokyoNumber } from "@/tokyoNumber";
-// ローカル登録。thisは使うことができない
+
 export default {
-  mixins: [tokyoNumber]
+  mixins: [tokyoNumber],
+  created() {
+    console.log("created in component")
+  }
 };
 </script>
