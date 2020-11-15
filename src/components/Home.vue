@@ -2,7 +2,8 @@
   <div>
     <p v-border:dotted.round.shadow="{width: '5px', color: 'red'}">Home</p>
     <!-- （注）引数は一つしか取れない -->
-    <h2>{{ title | upperCase }}</h2>
+    <h2>{{ title | upperCase | lowerCase }}</h2>
+    <!-- 連結させた場合は、左から順に処理が実行される -->
     <p>{{ subTitle | lowerCase }}</p>
   </div>
 </template>
