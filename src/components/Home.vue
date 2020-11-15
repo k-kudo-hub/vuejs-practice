@@ -1,11 +1,27 @@
 <template>
-  <p v-border:dotted.round.shadow="{width: '5px', color: 'red'}">Home</p>
-  <!-- （注）引数は一つしか取れない -->
+  <div>
+    <p v-border:dotted.round.shadow="{width: '5px', color: 'red'}">Home</p>
+    <!-- （注）引数は一つしか取れない -->
+    <h2>{{ title | upperCase }}</h2>
+    <p>{{ subTitle | lowerCase }}</p>
+  </div>
 </template>
 
 <script>
 // ローカル登録。thisは使うことができない
 export default {
+  data(){
+    return {
+      tmpData:"Hello",
+      title: "Welcome to Tokyo",
+      subTitle: "Tokyo!!",
+    }
+  },
+  filters: {
+    lowerCase(value) {
+      return value.toLowerCase();
+    }
+  },
   directives: {
     border(el, binding) {
       el.style.borderWidth = binding.value.width;
