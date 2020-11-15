@@ -5,23 +5,26 @@
     <h2>{{ title | upperCase | lowerCase }}</h2>
     <!-- 連結させた場合は、左から順に処理が実行される -->
     <p>{{ subTitle | lowerCase }}</p>
+    <p>{{ number }}</p>
+    <button @click="number++">+1</button>
+    <CountNumber></CountNumber>
   </div>
 </template>
 
 <script>
+import CountNumber from "./CountNumber.vue";
+import { tokyoNumber } from "@/tokyoNumber";
+
 // ローカル登録。thisは使うことができない
 export default {
+  mixins: [tokyoNumber],
   data(){
     return {
       tmpData:"Hello",
-      title: "Welcome to Tokyo",
-      subTitle: "Tokyo!!",
-    }
+    };
   },
-  filters: {
-    lowerCase(value) {
-      return value.toLowerCase();
-    }
+  components: {
+    CountNumber
   },
   directives: {
     border(el, binding) {
